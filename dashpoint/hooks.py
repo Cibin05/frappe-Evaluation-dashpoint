@@ -20,7 +20,9 @@ app_license = "mit"
 # 		"has_permission": "dashpoint.api.permission.has_app_permission"
 # 	}
 # ]
-
+permission_query_conditions = {
+    "Delivery Order": "app.dashpoint.dashpoint.permission.execute",
+}
 # Includes in <head>
 # ------------------
 
