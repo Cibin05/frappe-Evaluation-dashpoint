@@ -9,7 +9,7 @@ app_license = "mit"
 # ------------------
 
 # required_apps = []
-
+after_install = "dashpoint.api.after_install"
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
@@ -20,9 +20,9 @@ app_license = "mit"
 # 		"has_permission": "dashpoint.api.permission.has_app_permission"
 # 	}
 # ]
-permission_query_conditions = {
-    "Delivery Order": "app.dashpoint.dashpoint.permission.execute",
-}
+# permission_query_conditions = {
+#     "Delivery Order": "dashpoint.permission.delivery_order_query_conditions",
+# }
 # Includes in <head>
 # ------------------
 
