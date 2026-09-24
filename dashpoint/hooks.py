@@ -10,6 +10,13 @@ app_license = "mit"
 
 # required_apps = []
 after_install = "dashpoint.api.after_install"
+# doc_events = {
+#     "*": {
+#             "on_update": "dashpoint.api.log_change",
+#             "on_submit": "dashpoint.api.log_change",
+#             "on_cancel": "dashpoint.api.log_change",
+#         }
+# }
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{

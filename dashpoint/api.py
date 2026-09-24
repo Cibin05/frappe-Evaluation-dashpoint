@@ -1,10 +1,10 @@
 import frappe
-
+from frappe.utils import now
 @frappe.whitelist()
-def record_delivery_attempt(delivery_order_name, outcome):
+def record_delivery_attempt(delivery_order_name, outcome, failure_reason=None):
     doc = frappe.get_doc("Delivery Order", delivery_order_name)
 
-    if outcome == "Delivery Failed":
+    if outcome == "Failed":
         doc.delivery_attempts_count = doc.delivery_attempts_count + 1
 
         max_attempts = int(
@@ -55,7 +55,16 @@ def rename_rider(old, new):
         merge=False
     )
 
-
+def log_change(doc,method):
+    log= frappe.get_doc({
+          'doctype':"Audit Log",
+          'doctype_name':doc.doctype,
+          'document_name':doc.name,
+          'action':method,
+          'user':frappe.session.user,
+          'timestamp':now()
+     })
+    log.insert()
 
 
 
