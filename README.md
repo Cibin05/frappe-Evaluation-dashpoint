@@ -11,3 +11,6 @@ Because it shows all the record of an doctype to user even if that user don't ha
 
 4.Call self.save() inside on_update and observe what breaks so happens?
 on_update automatically save so when we use save again inside on_update it made into recursion
+
+5.In README_internals.md: why does a frappe.call inside the validate client event not work, and why must async fetches happen in onload/refresh instead?
+ validate is a synchronous method, frappe.call is asynchronous and takes time to complete. The document will saved before the frappe.call response.
