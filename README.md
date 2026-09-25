@@ -9,4 +9,5 @@ Frappe checks whether the document was modified by someone else after you opened
 
 Because it shows all the record of an doctype to user even if that user don't have permission to access the data. That will leads to unauthorized access and data loss.
 
-4.
+4.Call self.save() inside on_update and observe what breaks so happens?
+on_update automatically save so when we use save again inside on_update it made into recursion
