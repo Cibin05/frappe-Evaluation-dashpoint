@@ -20,3 +20,4 @@ on_update automatically save so when we use save again inside on_update it made 
 F-strings insert values directly into the SQL query, which can make it error to sql.parameterized sql keeps the values separate from the query,making it safer.
 
 8.In README_internals.md: explain the difference between putting a frappe.get_all() call directly inside the Jinja template versus pre-computing in before_print() and referencing doc.precomputed_field.
+when frappe.get_all() is called directly inside the Jinja template everytime the whole data is fetched but if it is pre-computed it can be used easily and is optimized.
