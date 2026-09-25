@@ -10,6 +10,11 @@ app_license = "mit"
 
 # required_apps = []
 after_install = "dashpoint.api.after_install"
+scheduler_events = {
+    "daily": [
+        "dashpoint.api.get_delivery_status"
+    ]
+}
 # doc_events = {
 #     "*": {
 #             "on_update": "dashpoint.api.log_change",

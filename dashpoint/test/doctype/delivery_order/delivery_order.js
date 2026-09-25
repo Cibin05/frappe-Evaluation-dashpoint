@@ -29,10 +29,7 @@ frappe.ui.form.on("Delivery Order", {
         } else if (frm.doc.status === "Re-attempt Scheduled") {
             frm.dashboard.add_indicator("Re-attempt Scheduled", "orange");
         }
-        if (
-            frm.doc.status === "In Transit" ||
-            frm.doc.status === "Re-attempt Scheduled"
-        ) {
+        if (frm.doc.status === "In Transit" || frm.doc.status === "Re-attempt Scheduled") {
              frm.add_custom_button("Log Delivery Attempt", function () {
                 let dialog = new frappe.ui.Dialog({
                     title: "Log Delivery Attempt",
